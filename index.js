@@ -1,11 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config');
+const cors = require('cors');
 const apiRouter = require('./api');
 const port = config.port;
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+    origin: '*', // Update to your frontend's origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
+  }));
 
 mongoose.connect(config.dbUri);
 
