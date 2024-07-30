@@ -6,11 +6,11 @@ const router = express.Router();
 
 // Endpoint to add flights
 router.post('/', async(req, res) =>{
-  try {
+  try{
     const flight = new Flight(req.body);
     await flight.save();
     res.status(201).send(flight);
-  } catch (error) {
+  }catch(error){
     res.status(500).send({ error: 'Failed to add flight', details: error.message});
   }
 });
