@@ -1,4 +1,4 @@
-# Flight Status Dashboard - Backend
+# Flight Status Update - Backend
 
 ## Overview
 This is the backend of the Flight Status Update application. It provides APIs for user authentication, managing flight data, fetching flight statuses alongside giving the flexibility to add passengers to a flight. The backend is built using Node.js, Express, and MongoDB. And deployed on an AWS EC2 instance
