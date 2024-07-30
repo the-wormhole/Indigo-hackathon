@@ -94,7 +94,8 @@ curl -X GET https://www.api-flights-indigo.work.gd/api/flights/6E123
 
 ## Get Future Flights
 ``` sh
-curl -X GET https://www.api-flights-indigo.work.gd/api/customers/60d0fe4f5311236168a109ca/flights
+curl -X GET https://www.api-flights-indigo.work.gd/api/auth/future-flights \
+-H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
 ## Add Passenger
