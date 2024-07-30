@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 
 const customerSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  mobile:{ type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true, sparse:true },
+  mobile:{ type: String, required: true, unique: true, sparse:true },
   password: { type: String, required: true },
   passengers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Passenger' }]
 });

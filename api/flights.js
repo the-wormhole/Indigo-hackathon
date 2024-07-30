@@ -1,6 +1,8 @@
 const express = require('express');
 const Flight = require('../models/Flight');
 const Passenger = require('../models/Passenger');
+const smsHandler = require("../handlers/smsHandler");
+const mailHandler = require("../handlers/mailHandler");
 
 const router = express.Router();
 
@@ -32,9 +34,12 @@ router.put('/:flightNumber', async(req, res) =>{
     const passengers = await Passenger.find({flightNumber: req.params.flightNumber });
 
     // Send notifications
-    passengers.forEach(passenger => {
+    passengers.forEach(async (passenger) => {
       // Send SMS via Twilio
+      const response = await smsHandler.createMessage(passenger.phone,flight);
+
       // Send Email via nodemailer
+      mailHandler.sendEmail(passenger.email,'Flight Update Notification',flight);
     });
 
     res.send(flight);
