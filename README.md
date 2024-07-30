@@ -3,7 +3,7 @@
 ## Overview
 This is the backend of the Flight Status Update application. It provides APIs for user authentication, managing flight data, fetching flight statuses alongside giving the flexibility to add passengers to a flight. The backend is built using Node.js, Express, and MongoDB. And deployed on an AWS EC2 instance
 
-## Features
+# Features
 - Customer authentication (signup and login)
 - Review flights booked by a customer
 - Manage flight data (add, update and fetch)
@@ -11,7 +11,7 @@ This is the backend of the Flight Status Update application. It provides APIs fo
 - Manage customer and passenger data
 - SMS and Email notifications for flight status updates
 
-## Technology Stack
+# Technology Stack
 - Node.js
 - Express
 - MongoDB
@@ -22,25 +22,25 @@ This is the backend of the Flight Status Update application. It provides APIs fo
 - Nodemailer (for Email notifications)
 - AWS EC2
 
-## API Endpoints
-# Authentication
+# API Endpoints
+## Authentication
 
 - `POST /api/auth/signup` - Sign up a new Customer
 - `POST /api/auth/login` - Log in an existing Customer
 
-# Flights
+## Flights
 - `POST /api/flights` - Add a new flight
 - `GET /api/flights/:flightNumber` - Get flight status by flight number
 - `PUT /api/flights/:flightId` - Update flight information
 
-# Customers
+## Customers
 - `GET /api/auth/future-flights` - Get future flights for a logged-in customer
 
-# Passengers
+## Passengers
 - `POST /api/passengers` - Add a new passenger
 
-## Sample API Requests
-# Sign Up
+# Sample API Requests
+## Sign Up
 ```sh
 curl -X POST https://www.api-flights-indigo.work.gd/api/auth/signup \
   -H "Content-Type: application/json" \
@@ -52,7 +52,7 @@ curl -X POST https://www.api-flights-indigo.work.gd/api/auth/signup \
   }'
 ```
 
-# Log In
+## Log In
 ```sh
 curl -X POST https://www.api-flights-indigo.work.gd/api/auth/login \
   -H "Content-Type: application/json" \
@@ -62,7 +62,7 @@ curl -X POST https://www.api-flights-indigo.work.gd/api/auth/login \
   }'
 ```
 
-# Add Flight
+## Add Flight
 ```sh
 curl -X POST https://www.api-flights-indigo.work.gd/api/flights \
   -H "Content-Type: application/json" \
@@ -76,7 +76,7 @@ curl -X POST https://www.api-flights-indigo.work.gd/api/flights \
   }'
 ``` 
 
-# Update a flight's status
+## Update a flight's status
 ```sh
 curl -X PUT https://www.api-flights-indigo.work.gd/api/flights/6E123 \
      -H "Content-Type: application/json" \
@@ -86,17 +86,17 @@ curl -X PUT https://www.api-flights-indigo.work.gd/api/flights/6E123 \
         }'
 ```
 
-# Check Flight Status
+## Check Flight Status
 ```sh
 curl -X GET https://www.api-flights-indigo.work.gd/api/flights/6E123
 ```
 
-# Get Future Flights
+## Get Future Flights
 ``` sh
 curl -X GET https://www.api-flights-indigo.work.gd/api/customers/60d0fe4f5311236168a109ca/flights
 ```
 
-# Add Passenger
+## Add Passenger
 ```sh
 curl -X POST https://www.api-flights-indigo.work.gd/api/passengers \
   -H "Content-Type: application/json" \
