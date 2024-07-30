@@ -9,9 +9,9 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: '*', // Update to your frontend's origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'] 
   }));
 
 mongoose.connect(config.dbUri);

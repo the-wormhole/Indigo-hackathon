@@ -1,11 +1,12 @@
 const express = require('express');
-const flightsRouter = require('./flights');
-const passengersRouter = require('./passengers');
-
+const flightRoutes = require('./flights');
+const passengerRoutes = require('./passengers');
+const authRoutes = require('./auth');
 const router = express.Router();
 
-router.use('/flights', flightsRouter);
-router.use('/passengers', passengersRouter);
+router.use('/flights', flightRoutes);
+router.use('/passengers', passengerRoutes);
+router.use('/auth', authRoutes);
 
 router.use((err, req, res, next) =>{
   res.status(500).send({ error: 'Internal Server Error', details: err.message});
