@@ -23,6 +23,7 @@ This is the backend of the Flight Status Update application. It provides APIs fo
 - AWS EC2
 
 # API Endpoints
+- Base URL -  `https://www.api-flights-indigo.work.gd`
 ## Authentication
 
 - `POST /api/auth/signup` - Sign up a new Customer
