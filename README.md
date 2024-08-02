@@ -107,7 +107,7 @@ curl -X POST https://www.api-flights-indigo.work.gd/api/passengers \
     "phone": "0987654321",
     "email": "jane.doe@example.com",
     "flightNumber": "6E123",
-    "bookingNumber": "PNR123"
+    "pnr": "PNR123"
   }'
 ```
 
